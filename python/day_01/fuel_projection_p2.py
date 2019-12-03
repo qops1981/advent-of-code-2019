@@ -6,9 +6,9 @@ def load_module_mass_index(filename):
 
 def calculate_fuel_for_mass(mass):
     calculation = ( ( mass / 3 ) - 2 )
-    if calculation <= 0:
-        return 0
-    else:
+    if calculation <= 0:    # Setup up for recursive fuel calculation
+        return 0            # Less than Zero is Zero
+    else:                   # Cumulative Calculation for Fuel
         return int(calculation + calculate_fuel_for_mass(calculation))    # Fuel Calculation Per the Challenge
 
 def main():
