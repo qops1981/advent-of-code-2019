@@ -2,10 +2,10 @@
 
 def load_module_mass_index(filename):
     file = open(filename, 'r').readlines()              # Read the File Lines
-    return [int(line.rstrip('\n')) for line in file]    # List of Lines withour newline and as INT
+    return [int(line.rstrip('\n')) for line in file]    # List of Lines without newline and as INT
 
-def calculat_fuel_for_mass(mass):
-    return int(( mass / 3 ) - 2)    # Fuel Calculation Per the Chalenge
+def calculate_fuel_for_mass(mass):
+    return int(( mass / 3 ) - 2)    # Fuel Calculation Per the Challenge
 
 def main():
 
@@ -16,7 +16,7 @@ def main():
     fuel_calculation = 0
 
     for mass in module_masses:
-        fuel_calculation += calculat_fuel_for_mass(mass)
+        fuel_calculation += calculate_fuel_for_mass(mass)
 
     print("Fuel Required for Launch is :", fuel_calculation)
 
