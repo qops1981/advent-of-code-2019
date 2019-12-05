@@ -30,7 +30,7 @@ def main():
                 break
 
             
-    print("1202 Alarm State is:", module_masses[0]) 
+    print("1202 Alarm State is:", int_stream[0]) 
 
 if __name__ == "__main__":
     main()
