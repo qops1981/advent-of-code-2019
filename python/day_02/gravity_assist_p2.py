@@ -29,9 +29,9 @@ def gravity_assist_calculation(dataset, noun, verb):
 
 def main():
 
-    gravity_assist_program = 'gravity_assist_input.txt'
+    gravity_assist_program = '../../input/day_02/gravity_assist_input.txt'
 
-    module_masses = load_gravity_assist_program(gravity_assist_program)
+    int_stream = load_gravity_assist_program(gravity_assist_program)
 
     noun, verb, output = 0, 0, 0
 
@@ -40,7 +40,7 @@ def main():
             noun = n
             for v in range(100):
                 verb = v
-                output = gravity_assist_calculation(list(module_masses), noun, verb)
+                output = gravity_assist_calculation(list(int_stream), noun, verb)
                 if output == 19690720:
                     break   # Keep going until we get the right values
         else:

@@ -9,7 +9,7 @@ def calculate_fuel_for_mass(mass):
 
 def main():
 
-    module_mass_input_source = 'module_mass_input_source.txt'
+    module_mass_input_source = '../../input/day_01/module_mass_input_source.txt'
 
     module_masses = load_module_mass_index(module_mass_input_source)
 
