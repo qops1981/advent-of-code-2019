@@ -8,13 +8,13 @@ def load_wire_paths(filename):
 
 def directions_to_coordinates(directions):
     x, y = 0, 0
-    coordinates_set = set([])
+    coordinates = []
 
     def coordinate_key(x,y):                # Turn Coordinates into a string
         return "%d,%d" % (x,y)
 
     def mark_chart(position):               # Add Position as string in set
-        coordinates_set.add(position)
+        coordinates.append(position)
 
     def vertical_move(direction):           # Make a Vertical Movement Calculation
         nonlocal y                          # Reference the Variable in the Parent Namespace
@@ -33,7 +33,7 @@ def directions_to_coordinates(directions):
         for _ in range(int(d[1:])):         # Step for Each direction
             move(d[0])
 
-    return coordinates_set                  # Return all of the Steps taken and their positions
+    return coordinates                      # Return all of the Steps taken and their positions
 
 def wire_intersections(list_1, list_2):     # Return Positions that exists in both paths
     return list_1 & list_2
@@ -52,8 +52,8 @@ def main():
 
     distances = []
 
-    for c in list(wire_intersections(wire_1, wire_2)):  # For Each Intersection, Converted Set to List
-        x, y = [int(p) for p in c.split(',')]           # Values was String Needed Int's
+    for c in list(wire_intersections(set(wire_1), set(wire_2))):  # For Each Intersection, Converted Set to List
+        x, y = [int(p) for p in c.split(',')]                     # Values was String Needed Int's
         distances.append(manhattan_distance(x,y))
 
     print("You Closest Intersection is:", min(distances))
