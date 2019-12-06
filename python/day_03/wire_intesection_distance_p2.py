@@ -50,8 +50,6 @@ def main():
     wire_1 = directions_to_coordinates(wire_paths[0])
     wire_2 = directions_to_coordinates(wire_paths[1])
 
-    print(len(wire_1))
-
     distances = []
 
     for c in list(wire_intersections(set(wire_1), set(wire_2))):  # For Each Intersection, Converted Set to List
