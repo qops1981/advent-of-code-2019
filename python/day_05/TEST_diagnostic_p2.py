@@ -1,6 +1,6 @@
 #! /usr/bin/env python3
 
-from lib.int_computer_p1 import IntComputer
+from lib.int_computer_p2 import IntComputer
 
 def load_test_diagnostic_program(filename):
     file = open(filename, 'r').read().strip("\n").split(",")      # Read the File
